@@ -1,15 +1,12 @@
 #include "algorithm.h"
 
-void maxSumRange(int arr[]){
-    int maxSum, maxSum_temp, start, end, start_temp = 0;
-    int size = sizeof(arr)/sizeof(arr[0]);
+void maxSumRange(int arr[], int size){
+    int maxSum = INT_MIN, maxSum_temp = 0, start = 0, end = 0, start_temp = 0;
 
-    for (size_t i = 0; i < size ; i++)
-    {
-        maxSum_temp = arr[i];
+    for (size_t i = 0; i < size ; i++){
+        maxSum_temp += arr[i];
 
-        if (maxSum < maxSum_temp)
-        {
+        if (maxSum < maxSum_temp){
             maxSum = maxSum_temp;
             start = start_temp;
             end = i;
@@ -17,12 +14,12 @@ void maxSumRange(int arr[]){
         
         if(maxSum_temp < 0){
             maxSum_temp = 0;
-            start = i + 1;
+            start_temp = i + 1;
         }
-
-        std::cout << "Максимальная сумма:" << maxSum <<std::endl;
-        std::cout << "Начало:" << start << std::endl;
-        std::cout << "Конец:" << end << std::endl;
     }
+
+    std::cout << "Максимальная сумма:" << maxSum <<std::endl;
+    std::cout << "Начало:" << start << std::endl;
+    std::cout << "Конец:" << end << std::endl;
     
 }  

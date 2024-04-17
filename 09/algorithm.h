@@ -1,3 +1,5 @@
 #include <iostream>
+#include <climits>
+#include <array>
 
-void maxSumRange(int a[]);
+void maxSumRange(int a[], int size);
