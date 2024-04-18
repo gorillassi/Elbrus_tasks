@@ -1,4 +1,4 @@
-#include "algorithm.h"
+#include "algorithm.hpp"
 
 int main(){
     int a[] = {4, -7, 5, -1, 8};

@@ -1,4 +1,4 @@
-#include "algorithm.h"
+#include "algorithm.hpp"
 
 void maxSumRange(int arr[], int size){
     int maxSum = INT_MIN, maxSum_temp = 0, start = 0, end = 0, start_temp = 0;
