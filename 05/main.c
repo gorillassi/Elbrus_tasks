@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <sys/stat.h>
-#include <unistd.h>
+#include <string.h>
 
 int main() {
     int fd;
