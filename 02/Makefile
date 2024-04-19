@@ -12,4 +12,4 @@ second_user: second_user.c
 .PHONY: clean
 
 clean:
-	rm -f first_user second_user
+	rm -f first_user.out second_user.out
