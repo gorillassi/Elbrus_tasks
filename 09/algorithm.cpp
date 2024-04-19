@@ -3,7 +3,7 @@
 void maxSumRange(int arr[], int size){
     int maxSum = INT_MIN, maxSum_temp = 0, start = 0, end = 0, start_temp = 0;
 
-    for (size_t i = 0; i < size ; i++){
+    for (int i = 0; i < size ; i++){
         maxSum_temp += arr[i];
 
         if (maxSum < maxSum_temp){
