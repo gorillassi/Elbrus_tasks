@@ -1,11 +1,7 @@
 #include "sort.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #define MAX_LENGTH 1000
 
-// Объявление compare_length
 int compare_length(const void *a, const void *b);
 
 int compare(const void *a, const void *b) {
@@ -39,7 +35,15 @@ void sort(char *inputFile, char *outputFile, char *sortingMethod) {
 
     while (fgets(buffer, MAX_LENGTH, inFile) != NULL) {
         if (strcspn(buffer, "\n\t ") != strlen(buffer)) {
-            lines[numLines] = strdup(buffer);
+            lines[numLines] = malloc(strlen(buffer) + 1);
+            if (lines[numLines] == NULL) {
+                perror("Memory allocation error");
+                fclose(inFile);
+                fclose(outFile);
+                free(lines);
+                return;
+            }
+            strcpy(lines[numLines], buffer);
             numLines++;
         }
     }
