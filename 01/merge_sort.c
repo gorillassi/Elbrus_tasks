@@ -14,7 +14,7 @@ void merge(int arr[], int l, int mid, int r) {
     int i = 0;
     int j = 0;
     int k = l;
-    
+
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
@@ -39,11 +39,11 @@ void merge(int arr[], int l, int mid, int r) {
     }
 }
 
-void* merge_sort(void* params) {
-    struct Sort_params* p = (struct Sort_params*)params;
+void *merge_sort(void *params) {
+    struct Sort_params *p = (struct Sort_params *)params;
     int left = p->left;
     int right = p->right;
-    int* arr = p->arr;
+    int *arr = p->arr;
 
     if (left < right) {
         int mid = left + (right - left) / 2;
