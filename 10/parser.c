@@ -66,11 +66,26 @@ int GetN(const char *expression, size_t *index) {
     pass_space(expression, index);
     int val = 0;
 
+    int unary_sign = 1;
+    if (*(expression + (*index)) == '+') {
+        (*index)++;
+        pass_space(expression, index);
+    } else if (*(expression + (*index)) == '-') {
+        unary_sign = 0;
+
+        (*index)++;
+        pass_space(expression, index);
+    }
+
     const char *exp_old = expression + (*index);
     while (('0' <= *(expression + (*index))) &&
            (*(expression + (*index)) <= '9')) {
         val = val * 10 + *(expression + (*index)) - '0';
         (*index)++;
+    }
+
+    if (unary_sign == 0) {
+        val = (-1) * val;
     }
 
     assert((expression + (*index)) != exp_old);
